@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    >
+
+
+    <com.spreo.sdk.view.SpreoDualMapView
+        android:id="@+id/map1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/staticMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="92dp"
+        android:maxLines="2"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:padding="5dp"
+        android:text="'From' is not your current position. Step-by-step disabled"
+        android:visibility="gone"
+        />
+
+
+    <com.reactlibrary.SpreoSearchView
+        android:id="@+id/searchview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="top"
+        android:elevation="4dp"
+        />
+
+
+
+    <com.reactlibrary.SpreoFromToView
+        android:id="@+id/fromtoview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="top"
+        android:elevation="4dp"
+        />
+
+    <com.reactlibrary.SpreoStaticNavView
+        android:id="@+id/staticNavView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="top"
+        android:elevation="4dp"
+        />
+
+    <com.reactlibrary.SpreoLiveNavView
+        android:id="@+id/liveNavView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="top"
+        android:elevation="4dp"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/floor_picker_LL"
+        android:layout_width="65dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="50dp"
+
+        >
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="6dp"
+            android:layout_marginLeft="35dp"
+            android:background="@drawable/triangle"
+            android:id="@+id/imageView5" />
+
+        <LinearLayout
+            android:id="@+id/floor_pick_cont"
+            android:layout_below="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_floor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_marginLeft="35dp"
+            android:layout_width="10dp"
+            android:layout_height="6dp"
+            android:layout_below="@+id/floor_pick_cont"
+            android:background="@drawable/triangle_d"
+            android:id="@+id/imageView6"
+            />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/selectCampusButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="160dp"
+            android:layout_gravity="bottom|start"
+            android:src="@drawable/campus_selection_button"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/mapFilterButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="110dp"
+            android:layout_gravity="bottom|start"
+            android:src="@drawable/map_filter" />
+
+        <ImageView
+            android:id="@+id/startNav"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="bottom|start"
+            android:layout_marginBottom="60dp"
+            android:src="@drawable/navigation_off" />
+
+        <ImageView
+            android:id="@+id/showMyLocation"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="bottom|start"
+            android:src="@drawable/locate_me" />
+    </FrameLayout>
+
+    <com.reactlibrary.SpreoDetailsView
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:elevation="5dp"/>
+
+    <include layout="@layout/spreo_parking_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="20dp"
+
+        >
+
+    </include>
+
+</FrameLayout>

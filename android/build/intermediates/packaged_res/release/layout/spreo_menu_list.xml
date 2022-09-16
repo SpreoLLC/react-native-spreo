@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menuItems"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#808080"
+        />
+
+    <LinearLayout
+
+        android:id="@+id/categoriesItem"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/list_item_poi" />
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_weight="3"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:textSize="16sp"
+            android:text="Categories"
+            />
+
+
+
+
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="1dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/store_cell_indicator"
+        />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#808080"
+        />
+
+    <LinearLayout
+
+        android:id="@+id/favoritesItem"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/layout_bg_selector"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/list_item_favorite"
+            />
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_weight="3"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:textSize="16sp"
+            android:text="Favorites"
+            />
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="1dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/store_cell_indicator"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#808080"
+        />
+
+    <LinearLayout
+
+        android:id="@+id/parkingItem"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/layout_bg_selector"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/list_item_my_parking"
+            />
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_weight="3"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:textSize="16sp"
+            android:text="Parking"
+            />
+
+
+
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="1dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/store_cell_indicator"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#808080"
+        />
+
+    <LinearLayout
+
+        android:id="@+id/selectCampusItem"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/layout_bg_selector"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/list_item_campus_selection"
+            />
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_weight="3"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:textSize="16sp"
+            android:text="Campus Selection"
+            />
+
+
+
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="1dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/store_cell_indicator"
+            />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#BF696969"
+    android:padding="20dp"
+    >
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/view_pager_container"
+                android:layout_width="match_parent"
+                android:layout_height="215dp">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="215dp"
+                    android:layout_gravity="center" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout_dots"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    app:tabBackground="@drawable/tab_selector_dots"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/main_logo"
+                android:layout_width="match_parent"
+                android:layout_height="215dp"
+                android:scaleType="fitXY"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_marginTop="5dp"
+                >
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/poiNameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/poi_details_text"
+                    android:textSize="18sp" />
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/poi_map_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/poiNameTv"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/poi_details_text"
+                    android:textSize="14sp" />
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/poi_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/poi_map_tv"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/poi_details_text"
+                    android:textSize="12sp" />
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/poi_details_text"
+                    android:textSize="14sp"
+                    android:visibility="gone"/>
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/poi_parking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/duration"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/actionbar_background"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/DirectionsLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"
+                    android:orientation="horizontal"
+                    android:clipToPadding="false"
+                    android:weightSum="5">
+
+                    <com.reactlibrary.SpreoCustomTextView
+                        android:id="@+id/showOnMapText"
+
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_weight="1.9"
+                        android:background="@drawable/login_btn"
+                        android:gravity="center"
+                        android:text="Show On Map"
+                        android:textColor="@drawable/home_btn_text"
+                        android:elevation="4dp"
+                        android:textSize="12sp" />
+
+
+                    <com.reactlibrary.SpreoCustomTextView
+                        android:id="@+id/go_poi_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toRightOf="@+id/imageView"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/go_btn"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Go"
+                        android:textColor="@drawable/home_btn_text"
+                        android:elevation="4dp"
+                        android:textSize="12sp" />
+
+                    <com.reactlibrary.SpreoCustomTextView
+                        android:id="@+id/addToFavoritesText"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+
+                        android:layout_weight="1.9"
+                        android:background="@drawable/login_btn"
+                        android:gravity="center"
+                        android:text="Add Favorite"
+                        android:textColor="@drawable/home_btn_text"
+                        android:elevation="4dp"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/descriptionLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#808080" />
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/expandableTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+
+                    android:lineSpacingExtra="4dp"
+
+
+                    android:textColor="@drawable/poi_details_text"
+                     />
+
+                <!--<View-->
+                    <!--android:id="@+id/description_sep"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:background="#808080" />-->
+
+                <RelativeLayout
+                    android:id="@+id/show_more_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:layout_toLeftOf="@+id/show_more_tv"
+                        android:background="#808080" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/small_margin"
+                        android:layout_toRightOf="@+id/show_more_tv"
+                        android:background="#66b6b1b1" />
+
+                    <ImageButton
+                        android:id="@+id/show_more_tv"
+                        android:layout_width="19dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/white"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/more_blue" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/hoursLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/poi_detail_btn"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!--<com.reactlibrary.SpreoCustomTextView-->
+                    <!--android:id="@+id/hours_static"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginBottom="5dp"-->
+                    <!--android:layout_marginEnd="@dimen/small_margin"-->
+                    <!--android:layout_marginStart="15dp"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:text="Hours"-->
+                    <!--android:textColor="#979494"-->
+                    <!--android:textSize="14dp"-->
+                     <!--/>-->
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/hoursTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+
+                    android:textColor="@drawable/poi_details_text"
+                    android:textSize="14dp"
+                     />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/web_info_detailsLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/poi_detail_btn"
+                android:clickable="true"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/poi_details_web_img"-->
+                    <!--android:layout_width="@dimen/poi_details_image"-->
+                    <!--android:layout_height="@dimen/poi_details_image"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginBottom="3dp"-->
+                    <!--android:layout_marginStart="@dimen/poi_details_margin"-->
+                    <!--android:layout_marginTop="3dp"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@drawable/web_address_black" />-->
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/web_info_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:layout_marginStart="15dp"
+
+                    android:text="url"
+                    android:textColor="@color/actionbar_background"
+                    android:textSize="16dp"
+                    />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/contact_emailLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/poi_detail_btn"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/poi_details_image"-->
+                    <!--android:layout_height="@dimen/poi_details_image"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginBottom="3dp"-->
+                    <!--android:layout_marginStart="@dimen/poi_details_margin"-->
+                    <!--android:layout_marginTop="3dp"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@drawable/poi_details_mail_btn" />-->
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/cont_mail_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@drawable/poi_details_text"
+
+                    android:textSize="16dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contact_phoneLL1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autoLink="phone"
+                android:background="@drawable/poi_detail_btn"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/poi_details_image"-->
+                    <!--android:layout_height="@dimen/poi_details_image"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginBottom="3dp"-->
+                    <!--android:layout_marginStart="@dimen/poi_details_margin"-->
+                    <!--android:layout_marginTop="3dp"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@drawable/poi_details_cont_btn" />-->
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/phone_text_view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+
+                    android:gravity="center_vertical"
+                    android:textColor="@drawable/poi_details_text"
+                    android:textSize="16dp"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contact_phoneLL2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autoLink="phone"
+                android:background="@drawable/poi_detail_btn"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <!--<ImageView-->
+                    <!--android:layout_width="@dimen/poi_details_image"-->
+                    <!--android:layout_height="@dimen/poi_details_image"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginBottom="3dp"-->
+                    <!--android:layout_marginStart="@dimen/poi_details_margin"-->
+                    <!--android:layout_marginTop="3dp"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:src="@drawable/poi_details_cont_btn" />-->
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/phone_text_view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+
+                    android:gravity="center_vertical"
+                    android:textColor="@drawable/poi_details_text"
+                    android:textSize="16dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/keywordsLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/poi_detail_btn"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone">
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/keywordsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:textStyle="italic"
+                    android:textColor="#bbbbbb"
+                    android:textSize="14dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/patking_lotLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/poi_detail_btn"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="@dimen/poi_details_image"
+                    android:layout_height="@dimen/poi_details_image"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginStart="@dimen/poi_details_margin"
+                    android:layout_marginTop="3dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/poi_details_parking_img" />
+
+                <com.reactlibrary.SpreoCustomTextView
+                    android:id="@+id/parking_lot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:layout_marginStart="12dp"
+                    android:gravity="center_vertical"
+                    android:text="Parking Lot"
+                    android:textColor="@color/actionbar_background"
+                    android:textSize="16dp"
+                     />
+            </LinearLayout>
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"></LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF">
+        <Button
+            android:id="@+id/closeDetailsBtn"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:background="@drawable/close_button"
+            android:text="Close"/>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

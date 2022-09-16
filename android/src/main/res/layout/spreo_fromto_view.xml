@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:clipToPadding="false"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4.5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="40dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/textView2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/from_to_start_point"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/fromTextLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:background="@drawable/text_view_stroke"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal"
+                        android:outlineProvider="bounds"
+                        android:elevation="4dp">
+
+                        <ImageView
+                            android:id="@+id/search_icon_from"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/from_to_search"
+                            />
+
+                        <TextView
+                            android:id="@+id/fromText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:maxLines="2"
+                            android:padding="5dp"
+                            android:text="My current location" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/fromEditLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:background="@drawable/text_view_stroke"
+                        android:layout_margin="5dp"
+                        android:visibility="gone"
+                        android:outlineProvider="bounds"
+                        android:elevation="4dp">
+
+                        <EditText
+                            android:id="@+id/fromEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="2"
+                            android:padding="5dp"
+                            android:textSize="14sp"
+                            android:background="@null"
+                            android:hint=" Begin typing" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp">
+
+                <ImageView
+                    android:id="@+id/textView"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/from_to_destination"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/toTextLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/text_view_stroke"
+                    android:padding="5dp"
+                    android:orientation="horizontal"
+                    android:outlineProvider="bounds"
+                    android:elevation="4dp">
+
+                    <ImageView
+                        android:id="@+id/search_icon_to"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/from_to_search" />
+
+                    <TextView
+                        android:id="@+id/toText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:maxLines="2"
+                        android:padding="5dp"
+                        android:text="" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/toEditLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/text_view_stroke"
+                    android:padding="5dp"
+                    android:visibility="gone"
+                    android:outlineProvider="bounds"
+                    android:elevation="4dp">
+
+                    <EditText
+                        android:id="@+id/toEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:maxLines="2"
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:hint=" Begin typing" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/closeFromToBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_clear_black_48dp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/myloc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_bg_selector"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/layout_bg_selector"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/poiIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/from_to_start_point"
+                />
+
+
+
+            <TextView
+                android:id="@+id/poiText"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_weight="3"
+                android:maxLines="2"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                android:text="My current location"
+                />
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="#808080"
+            />
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/fromToListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="singleChoice"
+        android:divider="#808080"
+        android:dividerHeight="1dp"
+        android:footerDividersEnabled="false"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:background="#FFFFFF"
+        />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="160dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:textColor="#FFFFFF"
+        android:background = "@drawable/start_btn"
+        android:layout_marginBottom="15dp"
+        android:text="START NAVIGATION"
+        android:elevation="4dp"
+        android:visibility="gone"/>
+
+</LinearLayout>

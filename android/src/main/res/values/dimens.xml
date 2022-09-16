@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="viewpager_margin">-120dp</dimen>
+    <dimen name="viewpager_margin_fix">60dp</dimen>
+    <dimen name="edit_image_text">14sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_medium">18sp</dimen>
+    <dimen name="text_size_loc_sharing">16sp</dimen>
+    <dimen name="text_size_large">22sp</dimen>
+    <dimen name="small_margin">15dp</dimen>
+    <dimen name="normal_margin">20dp</dimen>
+    <dimen name="social_icons">6dp</dimen>
+    <dimen name="home_actions">14.5sp</dimen>
+    <dimen name="main_menu_separator">15dp</dimen>
+    <dimen name="corner_radius">8dp</dimen>
+    <dimen name="x_small">2dp</dimen>
+    <dimen name="small">4dp</dimen>
+    <dimen name="edittext_margin">10dp</dimen>
+    <dimen name="poi_details_image">25dp</dimen>
+    <dimen name="poi_details_margin">20dp</dimen>
+    <dimen name="icon_size">20dp</dimen>
+    <dimen name="toolbar_padding">24dp</dimen>
+    <dimen name="dialog_button_padding">10dp</dimen>
+    <dimen name="dialog_button_cancel_padding">5dp</dimen>
+    <dimen name="create_profile_image">130dp</dimen>
+    <dimen name="profile_image">55dp</dimen>
+    <dimen name="create_profile_margin_top">35dp</dimen>
+    <dimen name="create_profile__edit_margin_top">1dp</dimen>
+    <dimen name="create_profile__edit_margin_left_right">50dp</dimen>
+    <dimen name="create_profile__edit_h">37dp</dimen>
+    <dimen name="loc_shar_item_imgs">22dp</dimen>
+    <dimen name="check_box_top_dimension">10dp</dimen>
+</resources>

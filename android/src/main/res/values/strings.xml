@@ -1,0 +1,4 @@
+<resources>
+    <string name="stop_nav">END</string>
+    <string name="navigate_to">Navigating to</string>
+</resources>

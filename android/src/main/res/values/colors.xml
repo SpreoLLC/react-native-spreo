@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="tool_bar">#2c90d4</color>
+    <color name="home_btn">#2c90d4</color>
+    <color name="go_btn">#45494f</color>
+    <color name="floor_item">#c8000000</color>39a439
+    <color name="actionbar_background">#1a4da0</color>
+    <color name="poi_details_text">#45494f</color>
+    <color name="nav_instructions_background">#1F9953</color>
+    <color name="nav_instructions_text">#FFFFFF</color>
+</resources>

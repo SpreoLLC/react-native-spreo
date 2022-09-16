@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="actionbar_background">#1a4da0</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="floor_item">#c8000000</color>
+    <color name="go_btn">#45494f</color>
+    <color name="home_btn">#2c90d4</color>
+    <color name="nav_instructions_background">#1F9953</color>
+    <color name="nav_instructions_text">#FFFFFF</color>
+    <color name="poi_details_text">#45494f</color>
+    <color name="tool_bar">#2c90d4</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="check_box_top_dimension">10dp</dimen>
+    <dimen name="corner_radius">8dp</dimen>
+    <dimen name="create_profile__edit_h">37dp</dimen>
+    <dimen name="create_profile__edit_margin_left_right">50dp</dimen>
+    <dimen name="create_profile__edit_margin_top">1dp</dimen>
+    <dimen name="create_profile_image">130dp</dimen>
+    <dimen name="create_profile_margin_top">35dp</dimen>
+    <dimen name="dialog_button_cancel_padding">5dp</dimen>
+    <dimen name="dialog_button_padding">10dp</dimen>
+    <dimen name="edit_image_text">14sp</dimen>
+    <dimen name="edittext_margin">10dp</dimen>
+    <dimen name="home_actions">14.5sp</dimen>
+    <dimen name="icon_size">20dp</dimen>
+    <dimen name="loc_shar_item_imgs">22dp</dimen>
+    <dimen name="main_menu_separator">15dp</dimen>
+    <dimen name="normal_margin">20dp</dimen>
+    <dimen name="poi_details_image">25dp</dimen>
+    <dimen name="poi_details_margin">20dp</dimen>
+    <dimen name="profile_image">55dp</dimen>
+    <dimen name="small">4dp</dimen>
+    <dimen name="small_margin">15dp</dimen>
+    <dimen name="social_icons">6dp</dimen>
+    <dimen name="text_size_large">22sp</dimen>
+    <dimen name="text_size_loc_sharing">16sp</dimen>
+    <dimen name="text_size_medium">18sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="toolbar_padding">24dp</dimen>
+    <dimen name="viewpager_margin">-120dp</dimen>
+    <dimen name="viewpager_margin_fix">60dp</dimen>
+    <dimen name="x_small">2dp</dimen>
+    <string name="navigate_to">Navigating to</string>
+    <string name="stop_nav">END</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="CustomActionBarTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/actionbar_background</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@color/actionbar_background</item>
+    </style>
+    <style name="RedCheck">
+        <item name="colorAccent">@color/actionbar_background</item>
+    </style>
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr format="reference" name="metaButtonBarStyle"/>
+        <attr format="reference" name="metaButtonBarButtonStyle"/>
+    </declare-styleable>
+    <declare-styleable name="ExpandableTextView">
+        <attr format="integer" name="trimLength"/>
+    </declare-styleable>
+    <declare-styleable name="SpreoCustomTextView">
+        <attr format="string" name="customFont"/>
+    </declare-styleable>
+    <declare-styleable name="TintableImageView">
+        <attr format="reference|color" name="customTint"/>
+    </declare-styleable>
+</resources>

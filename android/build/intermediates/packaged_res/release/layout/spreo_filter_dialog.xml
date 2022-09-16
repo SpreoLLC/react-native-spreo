@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/filterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Map Filter"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+         />
+
+
+    <ListView
+        android:id="@+id/filterListView"
+        android:layout_width="280dp"
+        android:layout_height="380dp"
+
+    />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:layout_marginTop="10dp"
+    />
+
+    <LinearLayout
+        android:id="@+id/closeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        >
+        <TextView
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:id="@+id/closeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Close"
+            android:layout_gravity="center_horizontal"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
