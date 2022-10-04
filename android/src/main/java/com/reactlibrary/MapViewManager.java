@@ -107,10 +107,10 @@ import static android.view.View.VISIBLE;
 import static com.reactlibrary.SpreoDetailsView.getFloorText;
 
 class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements SpreoDualMapViewListener,
-        SpreoNavigationListener, SpreoSearchClickListener, SpreoNavViewListener, MapFilterListener, ZoneDetection, MyLocationListener {
+        SpreoNavigationListener, SpreoSearchClickListener, SpreoNavViewListener, MapFilterListener, ZoneDetection,
+        MyLocationListener {
 
     public static final String REACT_CLASS = "SpreoDualMapView";
-
 
     private SpreoDualMapView mapView;
     private DualMapView mapViewDual;
@@ -123,7 +123,8 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
     private SpreoDetailsView detailsView;
     private SpreoCombinedViewListener combinedViewListener = null;
     private String title = "Maps and Directions";
-    private Button closeDetailsBtn, markParkingBtn, cancelParkingBtn, TakeMeParkingBtn, deleteParkingBtn, closeParkingBtn;
+    private Button closeDetailsBtn, markParkingBtn, cancelParkingBtn, TakeMeParkingBtn, deleteParkingBtn,
+            closeParkingBtn;
     private LinearLayout addParkingMenu, removeParkingMenu;
     private SpreoFromToView fromToView;
     private SpreoStaticNavView staticNavView;
@@ -146,6 +147,7 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
     ThemedReactContext reactContext;
     IPoi closestParking;
     Gson gson;
+
     @Override
     public String getName() {
         return REACT_CLASS;
@@ -157,16 +159,16 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         this.reactContext = reactContext;
         clean();
         gson = new Gson();
-        mapView = new SpreoDualMapView(reactContext.getApplicationContext(),attributeSet);
+        mapView = new SpreoDualMapView(reactContext.getApplicationContext(), attributeSet);
         SpreoMapViewInstance.getInstance().setSpreoDualMapView(mapView);
-        mapViewDual = new DualMapView(reactContext.getApplicationContext(),attributeSet,0);
+        mapViewDual = new DualMapView(reactContext.getApplicationContext(), attributeSet, 0);
         mapView.onCreate(null);
         mapView.registerListener(this);
         mapView.registerNavigationListener(this);
         SettingsProvider.getInstance().setFloorPickerVisibility(false);
         SettingsProvider.getInstance().setDisplayNavigationInstructionsOnMap(false);
         SettingsProvider.getInstance().setDisplayLabelsForPois(true);
-//        SettingsProvider.getInstance().setMapRotation(MapRotationType.NAVIGATION);
+        // SettingsProvider.getInstance().setMapRotation(MapRotationType.NAVIGATION);
         SettingsProvider.getInstance().setDrawInvisibleFloorsRoute(true);
         SettingsProvider.getInstance().setClickableDynamicBubbles(true);
         SettingsProvider.getInstance().setDrawInvisibleNavMarkers(true);
@@ -179,7 +181,7 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         if (ApplicationSettings.getInstance().isDefaultLocation()) {
             ILocation loc = ApplicationSettings.getInstance().getDefaultLocation();
             setSimulatedLocation(loc);
-        } else if(ApplicationSettings.getInstance().isSimulateLocation()) {
+        } else if (ApplicationSettings.getInstance().isSimulateLocation()) {
             ILocation loc = ApplicationSettings.getInstance().getLocationToSimulate(reactContext);
             setSimulatedLocation(loc);
         } else {
@@ -203,7 +205,6 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
     public void setSimulatedLocation(ILocation location) {
         simulatedLocation = location;
     }
-
 
     private View.OnClickListener markParkingListener = new View.OnClickListener() {
         @Override
@@ -318,10 +319,10 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         public void onClick(View v) {
 
             if (navigationState) {
-                //navigationCanceled();
+                // navigationCanceled();
             } else if (fromToView.getVisibility() == VISIBLE) {
                 fromToView.close();
-                //navigationCanceled();
+                // navigationCanceled();
             } else {
                 seacrhView.hideFavoritesMsg();
                 closeParkingMenu();
@@ -336,55 +337,61 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         openFromTo();
     }
 
-   /* private void updateFloorPicker(int selectedFloorId) {
-        boolean expandAble = true;
-        List<SpreoNewFloorObject> allFloors = getAllFacilityFloors();
-
-        int fromFloor;
-
-        if (toPoi != null) {
-            fromFloor = getFloorConsiderNoLocationMode(fromPoi);
-            expandAble = false;
-        } else {
-            fromFloor = Integer.MIN_VALUE;
-        }
-
-        int toFloor = Integer.MIN_VALUE;
-        if (toPoi != null) {
-            ILocation loc = toPoi.getLocation();
-            if (loc != null) {
-                if (loc.getLocationType() == LocationMode.INDOOR_MODE) {
-                    toFloor = (int)loc.getZ();
-                } else {
-                    toFloor = getEntranceFloor();
-                }
-            }
-        }
-
-
-        SpreoNewFloorAdapter newFloorAdapter = new SpreoNewFloorAdapter(allFloors, selectedFloorId, fromFloor, toFloor, false, expandAble, new SpreoNewFloorAdapter.ItemClickListener() {
-            @Override
-            public void onItemClick(RecyclerView.Adapter adapter, int position) {
-                mapView.showFloorWithId(((SpreoNewFloorAdapter) adapter).getItem(position).floorId);
-            }
-        });
-
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(ctx, 1);
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(newFloorAdapter);
-    }*/
+    /*
+     * private void updateFloorPicker(int selectedFloorId) {
+     * boolean expandAble = true;
+     * List<SpreoNewFloorObject> allFloors = getAllFacilityFloors();
+     * 
+     * int fromFloor;
+     * 
+     * if (toPoi != null) {
+     * fromFloor = getFloorConsiderNoLocationMode(fromPoi);
+     * expandAble = false;
+     * } else {
+     * fromFloor = Integer.MIN_VALUE;
+     * }
+     * 
+     * int toFloor = Integer.MIN_VALUE;
+     * if (toPoi != null) {
+     * ILocation loc = toPoi.getLocation();
+     * if (loc != null) {
+     * if (loc.getLocationType() == LocationMode.INDOOR_MODE) {
+     * toFloor = (int)loc.getZ();
+     * } else {
+     * toFloor = getEntranceFloor();
+     * }
+     * }
+     * }
+     * 
+     * 
+     * SpreoNewFloorAdapter newFloorAdapter = new SpreoNewFloorAdapter(allFloors,
+     * selectedFloorId, fromFloor, toFloor, false, expandAble, new
+     * SpreoNewFloorAdapter.ItemClickListener() {
+     * 
+     * @Override
+     * public void onItemClick(RecyclerView.Adapter adapter, int position) {
+     * mapView.showFloorWithId(((SpreoNewFloorAdapter)
+     * adapter).getItem(position).floorId);
+     * }
+     * });
+     * 
+     * RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(ctx, 1);
+     * recyclerView.setLayoutManager(mLayoutManager);
+     * recyclerView.setItemAnimator(new DefaultItemAnimator());
+     * recyclerView.setAdapter(newFloorAdapter);
+     * }
+     */
 
     private int getFloorConsiderNoLocationMode(IPoi poiStartNav) {
 
         int result = getEntranceFloor();
-        boolean isNoLocationMode = false; //Lookup.getInstance().lookup(SimulationHelper.class).isNoLocationMode();
+        boolean isNoLocationMode = false; // Lookup.getInstance().lookup(SimulationHelper.class).isNoLocationMode();
         ILocation myloc = SpreoLocationProvider.getInstance().getUserLocation();
 
         if (poiStartNav != null) {
-            result = (int)poiStartNav.getLocation().getZ();
+            result = (int) poiStartNav.getLocation().getZ();
         } else if (!isNoLocationMode && myloc != null && myloc.getLocationType() == LocationMode.INDOOR_MODE) {
-            result = (int)myloc.getZ();
+            result = (int) myloc.getZ();
         }
 
         return result;
@@ -406,7 +413,8 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
     public static List<SpreoNewFloorObject> getAllFacilityFloors() {
         List<SpreoNewFloorObject> floorObjects = new ArrayList<>();
         String campusId = SpreoDataProvider.getCampusId();
-        // get the facility of the floor picker (the facility with highest number of floors)
+        // get the facility of the floor picker (the facility with highest number of
+        // floors)
         String facilityId = SpreoDataProvider.getFloorPickerFacilityId();
         // get the floors index list
         HashMap<String, Object> facilityinfo = SpreoDataProvider
@@ -417,7 +425,6 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
             floorObjects.add(new SpreoNewFloorObject(floor, floortitle));
         }
         return floorObjects;
-
 
     }
 
@@ -431,7 +438,6 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         List<ICustomMarker> mlist = new ArrayList<>();
         mapView.setCustomMarkers(mlist);
     }
-
 
     public void onResume() {
         // required for the google map
@@ -467,22 +473,22 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
 
     @Override
     public void onPoiClick(IPoi poi) {
-      //  closeMenu();
+        // closeMenu();
         if (poi != null) {
-            mapView.openPoiBubble(poi);
+            showPoiDetails(poi, true);
+            mapView.closeBubble(poi);
         }
     }
 
     @Override
     public void onBubbleClick(IPoi poi) {
-     //   closeMenu();
+        // closeMenu();
         if (poi != null) {
 
             showPoiDetails(poi, true);
             mapView.closeBubble(poi);
         }
     }
-
 
     @Override
     public View aboutToOpenBubble(IPoi iPoi) {
@@ -534,28 +540,26 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
 
     }
 
-
     @Override
     public void OnFloorChange(int floorId) {
         SpreoMapViewInstance.getInstance().setPresentFloor(floorId);
 
-        presentFloor=floorId;
+        presentFloor = floorId;
         WritableMap params = Arguments.createMap();
         params.putInt("floorId", presentFloor);
         sendEvent(reactContext, "OnFloorChange", params);
-//        SpreoModule spreoUpdateView=new SpreoModule(SpreoPackage.getContext());
-  //      updateFloorPicker(presentFloor);
+        // SpreoModule spreoUpdateView=new SpreoModule(SpreoPackage.getContext());
+        // updateFloorPicker(presentFloor);
     }
 
     private void sendEvent(ReactContext reactContext,
-                           String eventName,
-                           @Nullable WritableMap params) {
+            String eventName,
+            @Nullable WritableMap params) {
         reactContext
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                 .emit(eventName, params);
 
     }
-
 
     @Override
     public void onMultipointClick(IPoi iPoi) {
@@ -582,13 +586,15 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         WritableMap params = Arguments.createMap();
         params.putString("navigationState", navigationState.name());
         params.putInt("presentFloor", presentFloor);
-       /* if (navigationState == NavigationState.STARTED) {
-            updateFloorPicker(presentFloor);
-        } else if (navigationState == NavigationState.DESTINATION_REACHED) {
-            //navigationCanceled();
-        } else if (navigationState == NavigationState.STOPED) {
-           updateFloorPicker(presentFloor);
-        }*/
+        /*
+         * if (navigationState == NavigationState.STARTED) {
+         * updateFloorPicker(presentFloor);
+         * } else if (navigationState == NavigationState.DESTINATION_REACHED) {
+         * //navigationCanceled();
+         * } else if (navigationState == NavigationState.STOPED) {
+         * updateFloorPicker(presentFloor);
+         * }
+         */
         reactContext
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                 .emit("onNavigationStateChanged", params);
@@ -602,10 +608,10 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         }
     }
 
-    public void setInstruction (INavInstruction instruction) {
+    public void setInstruction(INavInstruction instruction) {
 
-        String txt="";
-        String encoded =null;
+        String txt = "";
+        String encoded = null;
         WritableMap params = Arguments.createMap();
         if (instruction != null) {
             // clearInstructions();
@@ -617,14 +623,14 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
             Bitmap bm = instruction.getSignBitmap();
             if (bm != null) {
                 if (instruction.getId() == INavInstruction.DESTINATION_INSTRUCTION_TAG) {
-                     params.putString("color", "false");
+                    params.putString("color", "false");
                 } else {
                     params.putString("color", "true");
                 }
-                //insImageView.setImageBitmap(bm);
+                // insImageView.setImageBitmap(bm);
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 bm.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-                byte[] byteArray = byteArrayOutputStream .toByteArray();
+                byte[] byteArray = byteArrayOutputStream.toByteArray();
                 encoded = Base64.encodeToString(byteArray, Base64.DEFAULT);
             }
         }
@@ -638,7 +644,6 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
     public void onNavigationArriveToPoi(IPoi iPoi, List<IPoi> list) {
 
     }
-
 
     @Override
     public void onInstructionRangeEntered(INavInstruction iNavInstruction) {
@@ -661,7 +666,7 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
     @Override
     public void onGoClickListener(IPoi poi) {
         if (navigationState) {
-            //navigationCanceled();
+            // navigationCanceled();
         }
         seacrhView.hideMenu();
         seacrhView.setseacrhType(null);
@@ -669,7 +674,7 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         if (poi != null) {
             SpreoSearchDataHolder.getInstance().addHistory(poi);
             fromToView.setTo(poi);
-            //  presentDestination(poi, view);
+            // presentDestination(poi, view);
             openFromTo();
         }
     }
@@ -679,31 +684,34 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         if (poi != null) {
             showPoiDetails(poi, false);
 
-            SpreoAnalyticsUtility.sendReport(SpreoAnalyticsUtility.SEARCH_REPORT, poi.getpoiDescription(), poi.getFacilityID());
+            SpreoAnalyticsUtility.sendReport(SpreoAnalyticsUtility.SEARCH_REPORT, poi.getpoiDescription(),
+                    poi.getFacilityID());
         }
     }
 
     private void showPoiDetails(IPoi poi, boolean restSearch) {
-  /*    //  detailsView.setVisibility(VISIBLE);
-        if (restSearch) {
-         //   seacrhView.hideMenu();
-          //  seacrhView.setseacrhType(null);
-        } else {
-        //    seacrhView.hideKeyboard();
-        }*/
+        /*
+         * // detailsView.setVisibility(VISIBLE);
+         * if (restSearch) {
+         * // seacrhView.hideMenu();
+         * // seacrhView.setseacrhType(null);
+         * } else {
+         * // seacrhView.hideKeyboard();
+         * }
+         */
 
-        WritableMap writableMap= Arguments.createMap();
-        String poiStr= gson.toJson(poi,Object.class);
-        writableMap.putString("poi",poiStr);
+        WritableMap writableMap = Arguments.createMap();
+        String poiStr = gson.toJson(poi, Object.class);
+        writableMap.putString("poi", poiStr);
 
         reactContext
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                 .emit("setPoiDetailView", writableMap);
-        //setPoiContent(poi);
+        // setPoiContent(poi);
         String text = poi.getpoiDescription();
         if (text != null) {
             title = text;
-          //  notifyTitleChagne();
+            // notifyTitleChagne();
         }
     }
 
@@ -761,25 +769,25 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         notifyTitleChagne();
     }
 
-    private void presentOrigin () {
+    private void presentOrigin() {
         if (fromPoi != null) {
             ILocation loc = fromPoi.getLocation();
             if (loc != null) {
-//                SpreoLocationProvider.getInstance().stopLocationService();
-//                SpreoLocationProvider.getInstance().startLocationService(ctx, loc);
+                // SpreoLocationProvider.getInstance().stopLocationService();
+                // SpreoLocationProvider.getInstance().startLocationService(ctx, loc);
                 SpreoLocationProvider.getInstance().setSimulatedLocation(loc, true);
                 presentOriginMarker(loc);
-//                Handler handler = new Handler();
-//                handler.postDelayed(new Runnable() {
-//
-//                    @Override
-//                    public void run() {
-//                        SpreoLocationProvider.getInstance().stopLocationService();
-//                    }
-//
-//                }, 500);
+                // Handler handler = new Handler();
+                // handler.postDelayed(new Runnable() {
+                //
+                // @Override
+                // public void run() {
+                // SpreoLocationProvider.getInstance().stopLocationService();
+                // }
+                //
+                // }, 500);
             }
-        }  else {
+        } else {
             mapView.showMyLocation();
         }
 
@@ -805,7 +813,6 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         }
         mapView.presentLocation(loc);
     }
-
 
     private void presentOriginMarker() {
         setUserLocationVisibilty(false);
@@ -838,14 +845,14 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         }
     }
 
-
     public void presentDestination(String destination, SpreoDualMapView view) {
         if (destination != null) {
             String id = destination;
             if (id != null) {
                 IPoi dest = PoisUtils.getPoiById(id);
                 if (dest != null) {
-                    Bitmap bm = BitmapFactory.decodeResource(reactContext.getResources(), R.drawable.map_destination_center_anchor);
+                    Bitmap bm = BitmapFactory.decodeResource(reactContext.getResources(),
+                            R.drawable.map_destination_center_anchor);
                     if (bm != null) {
                         List<ICustomMarker> mlist = new ArrayList<>();
                         ICustomMarker cmarker = new SpreoCustomMarkerObj(dest, destinationMarkerId, bm);
@@ -854,9 +861,9 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
                         ILocation loc = dest.getLocation();
                         view.presentLocation(loc);
 
-//                    mapView.setIconForPoi(dest, bm);
-//                    ILocation loc = dest.getLocation();
-//                    mapView.presentLocation(loc);
+                        // mapView.setIconForPoi(dest, bm);
+                        // ILocation loc = dest.getLocation();
+                        // mapView.presentLocation(loc);
                     }
                 }
             }
@@ -865,14 +872,13 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
 
     @Override
     public String calculateDistance() {
-        int md = (int)mapView.getRouteDistance();
+        int md = (int) mapView.getRouteDistance();
         int fd = (int) MathUtils.metersToFeet(md);
-        double t = Math.ceil(((md * 0.75) / 60 ));
-//        String time = String.format("%.1f", t);
-        String result =  md + "m , " + (int)t + " min";
+        double t = Math.ceil(((md * 0.75) / 60));
+        // String time = String.format("%.1f", t);
+        String result = md + "m , " + (int) t + " min";
         return result;
     }
-
 
     @Override
     public void mapFilterApplied() {
@@ -904,12 +910,14 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
     }
 
     public void notifyUserAboutZone(boolean enter, String id) {
-//        List<GeofenceContent> content = GeofenceContentManager.getInstance().getContentByTriggerId(id);
-//        if(content != null && enter) {
-//            ZoneContentDialog.show(content);
-//        } else {
-//            Toast.makeText(ctx, (enter ? "Entering zone: " : "Leaving zone: ") + id + (enter ? " (no content)" : ""), Toast.LENGTH_LONG).show();
-//        }
+        // List<GeofenceContent> content =
+        // GeofenceContentManager.getInstance().getContentByTriggerId(id);
+        // if(content != null && enter) {
+        // ZoneContentDialog.show(content);
+        // } else {
+        // Toast.makeText(ctx, (enter ? "Entering zone: " : "Leaving zone: ") + id +
+        // (enter ? " (no content)" : ""), Toast.LENGTH_LONG).show();
+        // }
         if (debugMode) {
             Toast.makeText(ctx, (enter ? "Entering zone: " : "Leaving zone: ") + id, Toast.LENGTH_LONG).show();
         }
@@ -922,26 +930,26 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
 
     @Override
     public void onLocationDelivered(ILocation loc) {
-//        WritableMap params = Arguments.createMap();
-//get the campus
+        // WritableMap params = Arguments.createMap();
+        // get the campus
         Campus campus = ProjectConf.getInstance().getSelectedCampus();
-        //get campus radius
+        // get campus radius
         int radius = campus.getRadius();
-        //check if the location is in campus
+        // check if the location is in campus
         boolean incampus = LocationFinder.getInstance().isInCampus(radius);
         if (loc != null && !navigationState) {
-            if (loc.getLocationType() == LocationMode.INDOOR_MODE  || incampus == false) {
-//                params.putString("gpsMsgview", "false");
+            if (loc.getLocationType() == LocationMode.INDOOR_MODE || incampus == false) {
+                // params.putString("gpsMsgview", "false");
                 reactContext
                         .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                         .emit("gpsMsg", false);
-               // gpsMsg.setVisibility(GONE);
+                // gpsMsg.setVisibility(GONE);
             } else {
-//                params.putString("floorId", "true");
+                // params.putString("floorId", "true");
                 reactContext
                         .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                         .emit("gpsMsg", true);
-               // gpsMsg.setVisibility(VISIBLE);
+                // gpsMsg.setVisibility(VISIBLE);
             }
         }
     }
@@ -970,7 +978,6 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
     public void onLocationModeChange(LocationMode locationMode) {
 
     }
-
 
     private class DownloadFacilityImageTask extends AsyncTask<String, String, String> {
         @Override
@@ -1047,12 +1054,12 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
                     sb.append(line + "\n");
                 }
             } catch (IOException e) {
-                //e.printStackTrace();
+                // e.printStackTrace();
             } finally {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    //e.printStackTrace();
+                    // e.printStackTrace();
                 }
             }
             return sb.toString();
@@ -1116,8 +1123,8 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
                 for (ResolveInfo o : resInfos) {
                     CharSequence appname = getAppName(o);
                     if (appname != null) {
-                        String aname =  appname.toString();
-                        if(!aname.isEmpty()) {
+                        String aname = appname.toString();
+                        if (!aname.isEmpty()) {
                             appsmap.put(aname, o);
                             appsnamelist.add(aname);
                         }
@@ -1130,16 +1137,17 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
                 dialog.setCancelable(false);
 
                 ListView appslist = (ListView) dialog.findViewById(R.id.appsList);
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(ctx, R.layout.spreo_appslist_item, appsnamelist);
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(ctx, R.layout.spreo_appslist_item,
+                        appsnamelist);
                 appslist.setAdapter(adapter);
                 appslist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        String name = (String)parent.getItemAtPosition(position);
+                        String name = (String) parent.getItemAtPosition(position);
                         dialog.dismiss();
                         if (to != null) {
                             fromToView.setTo(to);
-                            //  presentDestination(to, view);
+                            // presentDestination(to, view);
                             openFromTo();
                         }
                         if (name != null) {
@@ -1161,7 +1169,6 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
                     }
                 });
 
-
                 TextView dialogCancel = (TextView) dialog.findViewById(R.id.dialogCancel);
                 dialogCancel.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -1179,7 +1186,6 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
             }
         }
     }
-
 
     private void initNavigation(final IPoi to) {
         ILocation loc = SpreoLocationProvider.getInstance().getUserLocation();
@@ -1208,7 +1214,7 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
                         dialog.dismiss();
                         if (to != null) {
                             fromToView.setTo(to);
-                            //  presentDestination(to, view);
+                            // presentDestination(to, view);
                             fromToView.showFromEdit();
                             openFromTo();
                         }
@@ -1241,8 +1247,8 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
                         for (ResolveInfo o : resInfos) {
                             CharSequence appname = getAppName(o);
                             if (appname != null) {
-                                String aname =  appname.toString();
-                                if(!aname.isEmpty()) {
+                                String aname = appname.toString();
+                                if (!aname.isEmpty()) {
                                     appsmap.put(aname, o);
                                     appsnamelist.add(aname);
                                 }
@@ -1255,12 +1261,13 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
                         dialog.setCancelable(false);
 
                         ListView appslist = (ListView) dialog.findViewById(R.id.appsList);
-                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(ctx, R.layout.spreo_appslist_item, appsnamelist);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(ctx, R.layout.spreo_appslist_item,
+                                appsnamelist);
                         appslist.setAdapter(adapter);
                         appslist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                String name = (String)parent.getItemAtPosition(position);
+                                String name = (String) parent.getItemAtPosition(position);
                                 dialog.dismiss();
                                 if (to != null) {
                                     fromToView.setTo(to);
@@ -1271,7 +1278,8 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
                                     ResolveInfo resInfo = appsmap.get(name);
                                     String packageName = resInfo.activityInfo.packageName;
                                     if (packageName.contains("google")) {
-                                        String googleuri = "google.navigation:q=" + latlng.latitude + "," + latlng.longitude;
+                                        String googleuri = "google.navigation:q=" + latlng.latitude + ","
+                                                + latlng.longitude;
                                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(googleuri));
                                         intent.setComponent(new ComponentName(packageName, resInfo.activityInfo.name));
                                         ctx.startActivity(intent);
@@ -1286,7 +1294,6 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
                             }
                         });
 
-
                         TextView dialogCancel = (TextView) dialog.findViewById(R.id.dialogCancel);
                         dialogCancel.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -1294,7 +1301,7 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
                                 dialog.dismiss();
                                 if (to != null) {
                                     fromToView.setTo(to);
-                                    //   presentDestination(to, view);
+                                    // presentDestination(to, view);
                                     openFromTo();
                                 }
                             }
@@ -1313,13 +1320,11 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         }
     }
 
-    private CharSequence getAppName(ResolveInfo resolveInfo){
+    private CharSequence getAppName(ResolveInfo resolveInfo) {
         CharSequence appName = "";
         appName = resolveInfo.loadLabel(ctx.getPackageManager());
         return appName;
     }
-
-
 
     private void closeNavView() {
         if (fromPoi != null) {
@@ -1353,7 +1358,7 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
 
         if (from == null) {
             toPoi = to;
-//            updateFloorPicker(presentFloor);
+            // updateFloorPicker(presentFloor);
             if (PropertyHolder.getInstance().isSimulationMode()) {
                 mapView.simulateNavigationTo(to);
                 simulationState = true;
@@ -1367,7 +1372,7 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
             toPoi = to;
             fromPoi = from;
             navigationState = true;
-//            updateFloorPicker(presentFloor);
+            // updateFloorPicker(presentFloor);
             presentOrigin();
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -1377,12 +1382,9 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
                 }
             }, 1000);
 
-
         }
 
-
     }
-
 
     public void setPoiForNavigation(String poiID) {
         IPoi poi = PoisUtils.getPoiById(poiID);
@@ -1391,18 +1393,17 @@ class MapViewManager extends ViewGroupManager<SpreoDualMapView> implements Spreo
         }
     }
 
-//    public void setPoiForDetails(String poiID) {
-//        IPoi poi = PoisUtils.getPoiById(poiID);
-//        if (poi != null) {
-//            showPoiDetails(poi, false);
-//        }
-//    }
+    // public void setPoiForDetails(String poiID) {
+    // IPoi poi = PoisUtils.getPoiById(poiID);
+    // if (poi != null) {
+    // showPoiDetails(poi, false);
+    // }
+    // }
 
     private void setUserLocationVisibilty(boolean visible) {
         mapView.setUserLocationVisibilty(visible);
         locationVisible = visible;
     }
-
 
     private void setParkingButtonsAvailability(boolean available) {
         markParkingBtn.setEnabled(available);

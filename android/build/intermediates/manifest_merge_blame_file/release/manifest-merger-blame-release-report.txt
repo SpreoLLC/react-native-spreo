@@ -6,77 +6,77 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="18"
-8-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml
+8-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="28" />
-9-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml
+9-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="com.mlins.screens.permission.MAPS_RECEIVE" />
-11-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:4:5-81
-11-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:4:22-78
+11-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:4:5-81
+11-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:4:22-78
 12    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-12-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:5:5-98
-12-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:5:22-95
+12-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:5:5-98
+12-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:5:22-95
 13    <uses-permission android:name="android.permission.WAKE_LOCK" />
-13-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:6:5-68
-13-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:6:22-65
+13-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:6:5-68
+13-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:6:22-65
 14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-14-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:7:5-79
-14-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:7:22-76
+14-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:7:5-79
+14-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:7:22-76
 15    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-15-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:8:5-76
-15-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:8:22-73
+15-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:8:5-76
+15-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:8:22-73
 16    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-16-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:9:5-76
-16-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:9:22-73
+16-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:9:5-76
+16-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:9:22-73
 17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-17-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:10:5-81
-17-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:10:22-78
+17-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:10:5-81
+17-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:10:22-78
 18    <uses-permission android:name="android.permission.INTERNET" />
-18-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:11:5-67
-18-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:11:22-64
+18-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:11:5-67
+18-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:11:22-64
 19    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-19-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:12:5-80
-19-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:12:22-77
+19-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:12:5-80
+19-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:12:22-77
 20    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-20-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:13:5-79
-20-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:13:22-76
+20-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:13:5-79
+20-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:13:22-76
 21    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-21-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:14:5-81
-21-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:14:22-78
+21-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:14:5-81
+21-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:14:22-78
 22    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
 23    <uses-permission android:name="android.permission.GET_TASKS" />
-23-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:16:5-68
-23-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:16:22-65
+23-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:16:5-68
+23-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:16:22-65
 24    <uses-permission android:name="android.permission.BLUETOOTH" />
-24-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:17:5-68
-24-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:17:22-65
+24-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:17:5-68
+24-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:17:22-65
 25    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-25-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:18:5-74
-25-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:18:22-71
+25-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:18:5-74
+25-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:18:22-71
 26    <!-- <uses-permission android:name="android.permission.CALL_PHONE" /> -->
 27    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-27-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:20:5-71
-27-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:20:22-68
+27-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:20:5-71
+27-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:20:22-68
 28    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_REC‌​OGNITION" />
-28-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:21:5-95
-28-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:21:22-93
+28-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:21:5-95
+28-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:21:22-93
 29
 30    <uses-feature
-30-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:23:5-25:36
+30-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:23:5-25:36
 31        android:name="android.hardware.bluetooth_le"
-31-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:24:9-53
+31-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:24:9-53
 32        android:required="false" />
-32-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:25:9-33
+32-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:25:9-33
 33
 34    <application android:supportsRtl="true" >
-34-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:27:5-36:19
-34-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:29:9-35
+34-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:27:5-36:19
+34-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:29:9-35
 35        <meta-data
-35-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:32:9-34:69
+35-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:32:9-34:69
 36            android:name="com.google.android.gms.version"
-36-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:33:13-58
+36-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:33:13-58
 37            android:value="@integer/google_play_services_version" />
-37-->/Applications/MAMP/htdocs/CenTrak_Maps_RN-AscensionApp/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:34:13-66
+37-->/Applications/MAMP/htdocs/CenTrak_Maps_RN2/node_modules/react-native-spreo/android/src/main/AndroidManifest.xml:34:13-66
 38    </application>
 39
 40</manifest>

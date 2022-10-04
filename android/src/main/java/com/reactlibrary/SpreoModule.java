@@ -108,7 +108,6 @@ import java.util.Set;
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
-
 public class SpreoModule extends ReactContextBaseJavaModule implements ConfigsUpdaterListener,
         SpreoUpdateListener, SpreoSearchClickListener, SpreoNavViewListener, MapFilterListener, GalleryListener {
     private String guestKey = "0e9f249966454ad6801a32f45d8a78fe1540236485013813319832";
@@ -123,7 +122,7 @@ public class SpreoModule extends ReactContextBaseJavaModule implements ConfigsUp
     private ProgressDialog dialog = null;
     ConfigsUpdaterListener configsUpdaterListener;
     private boolean waitingForSettingsResponse = false;
-    private  boolean gpsBool= true;
+    private boolean gpsBool = true;
     boolean staticMsg = false;
     //from mapview
     private SpreoDualMapView mapView;
@@ -1903,8 +1902,8 @@ pointSearchModels.add(poisSearchModel);*/
 
 
     public void navigate(IPoi from, IPoi to, Callback callback) {
-        SpreoSearchDataHolder.getInstance().addHistory(to);
         if (from == null) {
+            SettingsProvider.getInstance().setSimplifiedInstruction(false);
 //            initNavigation(to);
             poiForInitNavigation = to;
             ILocation loc = SpreoLocationProvider.getInstance().getUserLocation();
@@ -1912,14 +1911,7 @@ pointSearchModels.add(poisSearchModel);*/
                 startNavigation(from, to);
             } else {
                 if (SpreoLocationProvider.getInstance().isInCampus(getCampusRadius())) {
-
-                    if(gpsBool) {
-                        callback.invoke("gpsNavigation");
-                        gpsBool = false;
-                    }else {
-                        startNavigation(null, to);
-                    }
-
+                    startNavigation(null, to);
                 } else {
                     startThirdPartyNavigation(to, callback);
                 }
